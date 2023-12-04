@@ -1,0 +1,21 @@
+{
+  "name": "class-01",
+  "version": "1.0.0",
+  "description": "El objetivo de este trabajo práctico es implementar un servidor Express que maneje operaciones CRUD (Crear, Leer, Actualizar, Eliminar) para autores y libros mediante rutas dedicadas.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.2"
+  }
+}
