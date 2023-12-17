@@ -6,8 +6,8 @@ const app = express()
 
 app.use(express.json())
 
-const autores = []
-const libros = []
+let autores = []
+let libros = []
 
 //CONTROLADOR
 //manejamos las solicitudes http para la url /hello 
@@ -16,20 +16,21 @@ app.get('/hello', (req , res)=>{
     //req
 
     //respuesta
-    res.json({message: "hello world"})
+    res.json({message: 'hello world'})
 })
 
+// Codigo para crear autores
 app.post('/autores', (req, res)=>{
     const {nombre , apellido, id} = req.body
-
-    autores.push({nombre , apellido, id})
+    const nuevoAutor = {nombre , apellido, id}
+    autores.push(nuevoAutor)
     req.status(201)
-    req.send("autor creado")
+    res.send('autor creado')
 })
 
 app.get('/autores', (req , res)=>{
     req.status(200)
-    req.json(autores)
+    res.json(autores)
 })
 
 app.delete('/autores/:id', (req , res)=>{
@@ -37,8 +38,8 @@ app.delete('/autores/:id', (req , res)=>{
 
     autores = autores.filter(autor => autor.id !== +id)
 
-    res.send("eliminado")
+    res.send('eliminado')
 })
 
 //servimos la aplicacion en el puerto 3000
-app.listen(3000, () => console.log("server listening to port", 3000))
+app.listen(3000, () => console.log('server listening to port', 3000))

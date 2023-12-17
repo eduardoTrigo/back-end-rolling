@@ -1,0 +1,13 @@
+npm init
+npm install express  o pnpm install
+
+
+-------------dependencias de desarrollador--------------
+npm install -D nodemon     ->   "dev": "nodemon index.js"
+npm install -D eslint      ->    #instalar  como dependencia de desarrollo
+npm init @eslint/config          #iniciamos laconfiguracion inicial de eslint
+--------------------------------------------------------
+
+
+--------coneccion base de datos----------
+npm i mongoose
