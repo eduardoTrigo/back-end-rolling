@@ -10,7 +10,10 @@ app.use(express.json())
 app.use('/authors', authorRouter)
 app.use('/books', booksRouter)
 
+
+//conexion a la base de datos
 mongoose.connect('mongodb+srv://tp2_books:12345@cluster0.nrsbtqm.mongodb.net/?retryWrites=true&w=majority')
     .then(()=>console.log("conectado"))
     .catch(()=>console.log("no se conecto"))
+
 app.listen(3000, ()=> console.log("server listering in port", 3000))
