@@ -1,18 +1,16 @@
 const Author = require('../models/authors')
 
-const getAllAuthors = async (req, res) => {
-    try{
+const getAllAuthors = async (req, res, next) => {
+    try {
 
         const authors = await Author.find({})
         res.json(authors)
-    }catch(err){
-        console.log('getAllAuthors', err)
-        res.status(500)
-        res.json({message:'error interno'})
+    } catch (err) {
+        next(err)
     }
 }
 
-const createAuthors = async (req, res) => {
+const createAuthors = async (req, res, next) => {
     try {
         const { nombre, apellido } = req.body
 
@@ -22,37 +20,73 @@ const createAuthors = async (req, res) => {
         res.status(201)
         res.json(authors)
 
-    } catch(err){
+    } catch (err) {
         next(err)
     }
 }
 
-const deleteAuthor = async (req, res) => {
-    const { id } = req.params
+const getAuthorById = async (req, res, next) => {
+    try {
+        const { id } = req.params
+        const authors = await Author.findById(id)
 
-    const authors = Author.filter(author => author.id === +id)
-    res.send('eliminado')
-}
-
-const updateAuthor = async (req, res) => {
-    const { id } = req.params
-
-    const authors = await Author.findById(id)
-
-    if (!authors) {
-        res.status(400)
-        return res.json({ message: 'curso no encontrado' })
+        if (!authors) {
+            res.status(404)
+            return res.json({ message: 'autor no encontrado' })
+        }
+        res.json(authors)
+    } catch (err) {
+        next(err)
     }
-
-    authors.nombre = req.body.nombre ?? authors.nombre
-    authors.apellido = req.body.apellido ?? authors.apellido
-    await authors.save()
-    res.json(authors)
 }
+
+
+const updateAuthor = async (req, res, next) => {
+    try {
+        const { id } = req.params
+
+        const authors = await Author.findById(id)
+
+        if (!authors) {
+            res.status(400)
+            return res.json({ message: 'curso no encontrado' })
+        }
+
+        authors.nombre = req.body.nombre ?? authors.nombre
+        authors.apellido = req.body.apellido ?? authors.apellido
+        await authors.save()
+        res.json(authors)
+
+    } catch (err) {
+        next(err)
+    }
+}
+
+
+const deleteAuthor = async (req, res, next) => {
+    try {
+
+        const { id } = req.params
+
+        const authors = await Author.findByIdAndDelete(id)
+
+        if (!authors) {
+            res.status(400)
+            return res.json({ message: ' autor inexistente' })
+        }
+
+        res.json(authors)
+        res.send('eliminado')
+    }catch(err){
+        next(err)
+    }
+}
+
 
 module.exports = {
     getAllAuthors,
     createAuthors,
     updateAuthor,
-    deleteAuthor
+    deleteAuthor,
+    getAuthorById
 }
