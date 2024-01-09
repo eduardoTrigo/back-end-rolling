@@ -1,5 +1,6 @@
 const Author = require('../models/authors')
 
+//listar todos los autores
 const getAllAuthors = async (req, res, next) => {
     try {
         const authors = await Author.find({})
@@ -9,6 +10,7 @@ const getAllAuthors = async (req, res, next) => {
     }
 }
 
+//logica para crear un autor
 const createAuthors = async (req, res, next) => {
     try {
         const { nombre, apellido } = req.body
@@ -24,6 +26,7 @@ const createAuthors = async (req, res, next) => {
     }
 }
 
+//logica para listar un autor con el id
 const getAuthorById = async (req, res, next) => {
     try {
         const { id } = req.params
@@ -39,7 +42,7 @@ const getAuthorById = async (req, res, next) => {
     }
 }
 
-
+//logica para reemplazar un dato de un autor
 const updateAuthor = async (req, res, next) => {
     try {
         const { id } = req.params
@@ -61,7 +64,7 @@ const updateAuthor = async (req, res, next) => {
     }
 }
 
-
+//logica para eliminar un autor por id
 const deleteAuthor = async (req, res, next) => {
     try {
 
