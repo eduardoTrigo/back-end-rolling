@@ -1,0 +1,12 @@
+### list all courses - ok 
+GET http://localhost:3000/cursos
+
+### crear curso - ok
+POST http://localhost:3000/cursos
+Content-Type: application/json
+
+{
+    "nombre": "react 1.0",
+    "precio": 185,
+    "descripcion":"wxvwxvjhslakd"
+}
