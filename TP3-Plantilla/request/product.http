@@ -1,0 +1,31 @@
+### List All Products
+GET http://localhost:3000/productos
+
+###Product by id
+GET http://localhost:3000/productos/65a47e60b2d73805ee84m4bfd2
+
+
+###create
+POST http://localhost:3000/productos
+Content-Type: application/json
+
+{
+    "nombres":"I-Phone",
+    "precio": 220,
+    "stock":5,
+    "categoria": "celulares"
+}
+
+###update
+PATCH http://localhost:3000/productos/65a46e266e07687f693ce3cg3
+Content-Type: application/json
+
+{
+    "nombre": "pc i5",
+    "precio": 200,
+    "stock": 7,
+    "categoria": "computadoras"
+}
+
+###delete
+DELETE http://localhost:3000/productos/65a46cff325e5f7389ddeac6
