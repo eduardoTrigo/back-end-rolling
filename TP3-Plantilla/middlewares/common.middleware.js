@@ -1,19 +1,23 @@
 const { validationResult, param } = require('express-validator')
 const { logger } = require('../loggers')
 
-const requestValidation = ( req, res, next) => {
+const requestValidation = (req, res, next)=>{
     const result = validationResult(req)
 
-    if (!result.isEmpty()) return res.json({ errors: result.array() })
-    
+    if(!result.isEmpty()){
+        
+        res.status(400)
+        return res.json({ errors: result.array()})
+    }
 
     next()
 }
 
-const errorMiddleware = (err, req, res) => {
+const errorMiddleware=(err, req, res)=>{
     logger.error(err)
     res.status(500)
-    res.json({ message: 'Internal server error' })
+    res.json({message: 'error interno'})
+    
 }
 
 const validateMongoId = [

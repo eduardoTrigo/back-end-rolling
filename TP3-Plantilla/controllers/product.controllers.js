@@ -1,3 +1,4 @@
+const { logger } = require('../loggers')
 const Productos = require('../models/Product')
 
 const getAllProducts = async (req, res, next) => {
@@ -18,10 +19,10 @@ const getProductById = async (req, res, next) => {
 
         if (!producto) {
             res.status(404)
+            logger.error({message: 'no existe el producto'})
             return res.json({ message: 'no existe producto' })
         }
 
-        
         res.json(producto)
     } catch (err) {
         next(err)
@@ -36,6 +37,7 @@ const createProduct = async (req, res, next) => {
 
         await producto.save()
         res.status(201)
+        logger.info()
         res.json(producto)
     } catch (err) {
         next(err)
@@ -59,8 +61,7 @@ const updateProduct = async (req, res, next) => {
         producto.stock = req.body.stock ?? producto.stock
         producto.descripcion = req.body.descripcion ?? producto.descripcion
 
-        await producto.save()
-        
+        producto.save()
         res.json(producto)
     } catch (err) {
         next(err)

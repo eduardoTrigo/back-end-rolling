@@ -1,7 +1,7 @@
 const productRouter = require('express').Router()
-const { body } = require('express-validator')
+const { body, param } = require('express-validator')
 const { getAllProducts, createProduct, getProductById, deleteProducto, updateProduct } = require('../controllers/product.controllers')
-const { validateMongoId, errorMiddleware, requestValidation } = require('../middlewares/common.middleware')
+const { errorMiddleware, requestValidation } = require('../middlewares/common.middleware')
 
 
 productRouter.get('/',
@@ -10,7 +10,8 @@ productRouter.get('/',
 )
 
 productRouter.get('/:id',
-    validateMongoId,
+    param('id').isMongoId().withMessage('el id debe ser un formato mongo'),
+    requestValidation,
     getProductById,
     errorMiddleware
 )
@@ -29,13 +30,15 @@ productRouter.post('/',
 )
 
 productRouter.patch('/:id',
-    validateMongoId,
+    param('id').isMongoId().withMessage('el id debe ser un formato mongo'),
+    requestValidation,
     updateProduct,
     errorMiddleware,
 )
 
 productRouter.delete('/:id',
-    validateMongoId,
+    param('id').isMongoId().withMessage('el id debe ser un formato mongo'),
+    requestValidation,
     deleteProducto,
     errorMiddleware,
 )
