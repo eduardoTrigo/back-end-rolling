@@ -9,10 +9,9 @@ const logger = winston.createLogger({
         new winston.transports.File({filename: 'combined.log'}),
         new winston.transports.Console()
     ]
-    
 })
 
-const removeEntitis = winston.createLogger({
+const removelogger = winston.createLogger({
     level: 'info',
     format: winston.format.json(),
     transports:[
@@ -21,5 +20,6 @@ const removeEntitis = winston.createLogger({
 })
 
 module.exports = {
-    logger
+    logger,
+    removelogger
 }
