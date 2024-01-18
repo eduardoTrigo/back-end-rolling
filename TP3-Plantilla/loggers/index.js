@@ -1,4 +1,5 @@
 const winston = require('winston')
+const IncidentTransport = require('./transport/IncidentTransport')
 
 const logger = winston.createLogger({
     level: 'info',
@@ -6,20 +7,22 @@ const logger = winston.createLogger({
     defaultMeta: { service: 'user-service'},
     transports:[
         new winston.transports.File({filename: 'error.log', level: 'error'}),
-        new winston.transports.File({filename: 'combined.log'}),
+        // new winston.transports.File({filename: 'combined.log'}),
+        new IncidentTransport({ level: 'error'}),
         new winston.transports.Console()
     ]
     
 })
 
-const removeEntitis = winston.createLogger({
+const removeLogger = winston.createLogger({
     level: 'info',
     format: winston.format.json(),
     transports:[
-        new winston.transports.File({filename: 'entidades-removidas.log'})
+        new winston.transports.File({filename: 'entidades-removidas.log', level: 'info'})
     ]
 })
 
 module.exports = {
-    logger
+    logger,
+    removeLogger,
 }

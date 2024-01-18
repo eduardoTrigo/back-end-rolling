@@ -10,10 +10,10 @@ class IncidentTransport extends Transport {
         if(info.level === 'error'){
             setImmediate(async () => {
                 const incident = new Incident({
-                    message: JSON.stringify({
+                    message:{
                         date: new Date().toLocaleString(),
                         error: info.message
-                    })
+                    }
                 })
                 await incident.save()
 

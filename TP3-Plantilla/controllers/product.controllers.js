@@ -1,4 +1,4 @@
-const { logger } = require('../loggers')
+const { logger, removeLogger } = require('../loggers')
 const Productos = require('../models/Product')
 
 const getAllProducts = async (req, res, next) => {
@@ -37,7 +37,7 @@ const createProduct = async (req, res, next) => {
 
         await producto.save()
         res.status(201)
-        logger.info()
+        logger.info(producto)
         res.json(producto)
     } catch (err) {
         next(err)
@@ -78,7 +78,7 @@ const deleteProducto = async (req, res, next) => {
             res.status(404)
             return res.json({ message: 'no existe producto' })
         }
-
+        removeLogger(producto)
         res.json(producto)
     } catch (err) {
         next(err)
