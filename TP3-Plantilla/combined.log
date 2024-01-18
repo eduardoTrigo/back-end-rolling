@@ -1,4 +1,5 @@
 {"level":"info","message":"Base de datos conectada","service":"user-service"}
+<<<<<<< HEAD
 {"level":"info","message":"Base de datos conectada","service":"user-service"}
 {"level":"info","message":"Base de datos conectada","service":"user-service"}
 {"level":"info","message":"Base de datos conectada","service":"user-service"}
@@ -9,3 +10,5 @@
 {"level":"info","message":"Base de datos conectada","service":"user-service"}
 {"level":"info","message":"Base de datos conectada","service":"user-service"}
 {"level":"info","message":"Base de datos conectada","service":"user-service"}
+=======
+>>>>>>> d6c3bf28e0fc256150efb13bfef9885b32709745

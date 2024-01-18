@@ -6,31 +6,24 @@ const logger = winston.createLogger({
     format: winston.format.json(),
     defaultMeta: { service: 'user-service'},
     transports:[
+        new winston.transports.File({filename: 'traza.log', level: 'info'}),
         new winston.transports.File({filename: 'error.log', level: 'error'}),
-        // new winston.transports.File({filename: 'combined.log'}),
-        new IncidentTransport({ level: 'error'}),
-        new winston.transports.Console()
+        new winston.transports.File({filename: 'warns.log', level: 'warn'}),
+        new IncidentTransport({ level: 'error' }),
+        // new winston.transports.Console()
     ]
 })
 
-<<<<<<< HEAD
-const removeLogger = winston.createLogger({
-=======
 const removelogger = winston.createLogger({
->>>>>>> d6c3bf28e0fc256150efb13bfef9885b32709745
     level: 'info',
     format: winston.format.json(),
+    defaultMeta: { service: 'user-service' },
     transports:[
-        new winston.transports.File({filename: 'entidades-removidas.log', level: 'info'})
+        new winston.transports.File({filename: 'entidades-eliminadas.log', level: 'info'})
     ]
 })
 
 module.exports = {
     logger,
-<<<<<<< HEAD
-    removeLogger,
-}
-=======
     removelogger
 }
->>>>>>> d6c3bf28e0fc256150efb13bfef9885b32709745

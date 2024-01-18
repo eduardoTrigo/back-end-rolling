@@ -1,0 +1,20 @@
+### get all
+GET http://localhost:3000/categorias
+
+### get By Id
+GET http://localhost:3000/categorias/65a711a32f485d850fdf0945
+
+### create
+POST http://localhost:3000/categorias
+Content-Type: application/json
+
+{
+    "nombre": "computadoras",
+    "descripcion": "pcs"
+}
+
+### update
+PATCH http://localhost:3000/categorias/65a6d2d28b171eaebd7d092e
+
+### delete
+DELETE http://localhost:3000/categorias/65a711592f485d850fdf0944
