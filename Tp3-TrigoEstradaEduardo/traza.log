@@ -1,3 +1,16 @@
 {"date":"16/1/2024, 21:44:36","level":"info","message":"servidor ejecutandoce en el puerto3000","service":"user-service"}
 {"level":"info","message":"Base de datos conectada","service":"user-service"}
 {"_message":"Producto validation failed","errors":{"nombre":{"kind":"required","message":"Path `nombre` is required.","name":"ValidatorError","path":"nombre","properties":{"message":"Path `nombre` is required.","path":"nombre","type":"required"}},"precio":{"kind":"required","message":"Path `precio` is required.","name":"ValidatorError","path":"precio","properties":{"message":"Path `precio` is required.","path":"precio","type":"required"}}},"level":"error","message":"Producto validation failed: nombre: Path `nombre` is required., precio: Path `precio` is required.","name":"ValidationError","service":"user-service"}
+{"date":"18/1/2024, 2:39:50","level":"info","message":"servidor ejecutandoce en el puerto3000","service":"user-service"}
+{"date":"18/1/2024, 2:39:54","level":"info","message":"servidor ejecutandoce en el puerto3000","service":"user-service"}
+{"level":"info","message":"Base de datos conectada","service":"user-service"}
+{"date":"18/1/2024, 4:03:15","level":"info","message":"servidor ejecutandoce en el puerto3000","service":"user-service"}
+{"level":"info","message":"Base de datos conectada","service":"user-service"}
+{"date":"18/1/2024, 4:06:04","level":"info","message":"servidor ejecutandoce en el puerto3000","service":"user-service"}
+{"level":"info","message":"Base de datos conectada","service":"user-service"}
+{"date":"18/1/2024, 4:08:50","level":"info","message":"servidor ejecutandoce en el puerto3000","service":"user-service"}
+{"level":"info","message":"Base de datos conectada","service":"user-service"}
+{"date":"18/1/2024, 4:11:08","level":"info","message":"servidor ejecutandoce en el puerto3000","service":"user-service"}
+{"level":"info","message":"Base de datos conectada","service":"user-service"}
+{"date":"18/1/2024, 4:14:00","level":"info","message":"servidor ejecutandoce en el puerto3000","service":"user-service"}
+{"level":"info","message":"Base de datos conectada","service":"user-service"}

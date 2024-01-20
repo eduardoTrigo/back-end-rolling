@@ -1,11 +1,12 @@
 const { removelogger } = require("../logger")
+const Categoria = require("../models/category")
 const Productos = require("../models/product")
 
 const getAllProduct = async (req, res, next) => {
     try {
         const productos = await Productos.find({})
 
-        res.json(productos)
+        res.json({ data: productos, error:[]})
     } catch (err) {
         next(err)
     }
@@ -19,10 +20,10 @@ const getProductById = async (req, res, next) => {
         if (!producto) {
             res.status(404)
             // logger.error({ message: 'no existe el producto' })
-            return res.json({ message: 'no existe producto' })
+            return res.json({ data: [], error: 'usuario no encontrado' })
         }
 
-        res.json(producto)
+        res.json({ data: producto, error: []})
     } catch (err) {
         next(err)
     }
@@ -30,13 +31,19 @@ const getProductById = async (req, res, next) => {
 
 const createProduct = async (req, res, next) => {
     try {
-        const { nombre, precio, descripcion } = req.body
-        const producto = new Productos({ nombre, precio, descripcion })
+        const {catId, nombre, precio, descripcion } = req.body
 
+        const owner = await Categoria.findById(catId)
+        if(!owner) return res.status(400).json({ data: [], error: ['no existe esa categoria']})
+
+        const producto = new Productos({ nombre, precio, descripcion })
         await producto.save()
 
+        owner.producto.push(catId)
+        await owner.save()
+
         res.status(201)
-        res.json(producto)
+        res.json({data: producto, error: []})
     } catch (err) {
         next(err)
     }
@@ -50,7 +57,7 @@ const updateProduct = async (req, res, next) => {
 
         if (!producto) {
             res.status(400)
-            return res.json({ message: 'no existe producto' })
+            return res.json({ data: [], error: 'usuario no encontrado' })
         }
 
         producto.nombre = req.body.nombre ?? producto.nombre
@@ -59,7 +66,7 @@ const updateProduct = async (req, res, next) => {
         producto.descripcion = req.body.descripcion ?? producto.descripcion
 
         producto.save()
-        res.json(producto)
+        res.json({ data: producto, error: []})
     } catch (err) {
         next(err)
     }
@@ -72,12 +79,12 @@ const deleteProduct = async (req, res, next) => {
         const producto = await Productos.findByIdAndDelete(id)
 
         if (!producto) {
-            res.status(404)
-            return res.json({ message: 'no existe producto' })
+            res.status(400)
+            return res.json({ data: [], error: 'usuario no encontrado' })
         }
 
         removelogger.info(producto)
-        res.json(producto)
+        res.json({ data: producto, error: [] })
     } catch (err) {
         next(err)
     }
