@@ -2,20 +2,20 @@
 GET http://localhost:3000/productos
 
 ### get By Id
-GET http://localhost:3000/productos/65a6d2d28b171eaebd7d092e
+GET http://localhost:3000/productos/65a6f0d9bfe9d49c19e2c73
 
 ### create
 POST http://localhost:3000/productos
 Content-Type: application/json
 
 {
-    "nombre": "tablet tcl",
-    "precio": 98,
-    "descripcion": "This is a simple description 3"
+    "nombre": "pc i5",
+    "precio": 185,
+    "descripcion": "This is a simple description 2"
 }
 
 ### update
 PATCH http://localhost:3000/productos/65a6d2d28b171eaebd7d092e
 
 ### delete
-DELETE http://localhost:3000/productos/65a710a62f485d850fdf093c
+DELETE http://localhost:3000/productos/628d0863d6837bc4aac0f

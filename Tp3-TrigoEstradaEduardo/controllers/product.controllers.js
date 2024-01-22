@@ -1,4 +1,4 @@
-const { removelogger } = require("../logger")
+const { removelogger, logger } = require("../logger")
 const Categoria = require("../models/category")
 const Productos = require("../models/product")
 
@@ -42,6 +42,7 @@ const createProduct = async (req, res, next) => {
         owner.producto.push(catId)
         await owner.save()
 
+        logger.info(producto)
         res.status(201)
         res.json({data: producto, error: []})
     } catch (err) {

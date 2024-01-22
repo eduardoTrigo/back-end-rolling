@@ -1,5 +1,5 @@
 {
-  "name": "tp3-trigoestradaeduardo",
+  "name": "prectica_clase--7",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,14 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^16.3.2",
     "express": "^4.18.2",
-    "express-validator": "^7.0.1",
-    "mongoose": "^8.0.4",
+    "mongoose": "^8.1.0",
     "morgan": "^1.10.0",
-    "winston": "^3.11.0"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.2"
+    "nodemon": "^3.0.3"
   }
 }

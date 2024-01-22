@@ -1,0 +1,8 @@
+### create Author
+POST http://localhost:3000/situation/populate/create-author
+Content-Type: 'application/json'
+
+{
+    "firstName":"Eduardo",
+    "lastName": "Trigo"
+}
