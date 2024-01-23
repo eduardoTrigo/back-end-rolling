@@ -1,9 +1,12 @@
 const { Schema, model } = require("mongoose");
+const User = require('./User')
 
-const staffSchema = new Schema({
-
-})
-
-const Staff = model('Staff', staffSchema)
+const Staff = User.discriminator('Staff', new Schema({
+    employeeId: {
+        type:String,
+        required: true,
+        unique: true
+    }
+}))
 
 module.exports = Staff

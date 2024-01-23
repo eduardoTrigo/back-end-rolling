@@ -20,3 +20,6 @@
 {"level":"info","message":"Base de datos conectada","service":"user-service"}
 {"date":"20/1/2024, 21:26:00","level":"info","message":"servidor ejecutandoce en el puerto3000","service":"user-service"}
 {"level":"info","message":"Base de datos conectada","service":"user-service"}
+{"date":"23/1/2024, 0:57:24","level":"info","message":"servidor ejecutandoce en el puerto3000","service":"user-service"}
+{"level":"info","message":"Base de datos conectada","service":"user-service"}
+{"date":"23/1/2024, 0:59:01","level":"info","message":"servidor ejecutandoce en el puerto3000","service":"user-service"}

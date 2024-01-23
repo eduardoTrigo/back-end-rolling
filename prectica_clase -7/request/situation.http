@@ -1,11 +1,30 @@
 ### create Author
 POST http://localhost:3000/situation/populate/create-author
-Content-Type: 'application/json'
+Content-Type: application/json
 
 {
-    "firstName":"Eduardo",
-    "lastName": "Trigo"
+    "firstName":"napoleon",
+    "lastName": "hill"
 }
 
 ### create book
 POST http://localhost:3000/situation/populate/create-book
+Content-Type: application/json
+
+{
+    "name":"mas astuto que el diablo",
+    "description": "superacion personal 2",
+    "authorId":"65af41bcc37ebea8b7235d06"
+}
+
+### get all
+GET http://localhost:3000/situation/populate/find-Books
+
+### get all - author data
+GET http://localhost:3000/situation/populate/find-Books?withAutorData=YES
+
+### get all - books by id
+GET http://localhost:3000/situation/populate/find-Books?bookId=65af4ef731687c5887d0f96e
+
+### get all - by book Id - author data
+GET http://localhost:3000/situation/populate/find-Books?bookId=65af4ef731687c5887d0f96e&withAutorData=YES

@@ -1,0 +1,28 @@
+### create staff
+POST http://localhost:3000/situation/discriminators/create-staff
+Content-Type: application/json
+
+{
+    "username":"lemmyTrigo2",
+    "employeeId": "122716r"
+}
+
+### get staff
+GET http://localhost:3000/situation/discriminators/find-staff
+
+### get - find By id - staff
+GET http://localhost:3000/situation/discriminators/find-staff?employeeId=122716r
+
+### create customer
+POST http://localhost:3000/situation/discriminators/create-Customer
+Content-Type: application/json
+
+{
+    "username":"lemmyTrigo"
+}
+
+### get customer
+GET http://localhost:3000/situation/discriminators/find-customer
+
+### get - find By id - customer
+GET http://localhost:3000/situation/discriminators/find-customer?employeeId=122716r
