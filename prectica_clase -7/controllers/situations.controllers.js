@@ -17,11 +17,28 @@ const createBook = async (req, res) => {
     res.json(book)
 }
 
-// const getBooks = async(req, res)=>{
+ const getBooks = async(req, res)=>{
+    const {bookId, withAutorData } = req.query
+    
+    let query = undefined
+    
+    if (bookId !== undefined) {
+        query = Book.findById(bookId)
+    }else{
+        query = Book.find({})
+    }
 
-// }
+    if (withAutorData !== undefined && withAutorData ==="YES"){
+        query = query.populate('authorId')
+    }
+
+    const response = await query.exec()
+
+    res.json(response)
+ }
 
 module.exports = {
     createAuthor,
     createBook,
+    getBooks
 }

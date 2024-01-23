@@ -6,3 +6,6 @@ Content-Type: 'application/json'
     "firstName":"Eduardo",
     "lastName": "Trigo"
 }
+
+### create book
+POST http://localhost:3000/situation/populate/create-book
