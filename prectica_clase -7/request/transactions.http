@@ -1,0 +1,44 @@
+### create product
+POST  http://localhost:3000/situation/transactions/create-product
+Content-Type: application/json
+
+{
+    "name": "motorola"
+}
+
+### get product
+GET http://localhost:3000/situation/transactions/find-product
+
+
+### get product by Id
+GET http://localhost:3000/situation/transactions/find-product?productId=65afa3c67dd9d9eebe8e6e08
+
+
+### make product
+PATCH http://localhost:3000/situation/transactions/make-product
+Content-Type: application/json
+
+{
+    "productId":"65afa0c321ad8e6da7a41f51",
+    "available": true
+}
+
+### update product
+PATCH http://localhost:3000/situation/transactions/update-product
+Content-Type: application/json
+
+{
+    "productId": "65afa3c67dd9d9eebe8e6e08",
+    "price": 210,
+    "stock": 17
+}
+
+###prepare order post
+POST http://localhost:3000/situation/transactions/prepare-order
+Content-Type: application/json
+
+{
+    "customerId":"65af61eb2cbe6666d8b9b70d",
+    "productId":"65afa0c321ad8e6da7a41f51",
+    "quantity":
+}
