@@ -1,4 +1,4 @@
-const { createAuthor, createBook, getBooks, createStaff, createCustomer, getStaff, getCustomer, createProduct, getProduct, makeProductAvailable, updateProduct, prepareOrder } = require('../controllers/situations.controllers')
+const { createAuthor, createBook, getBooks, createStaff, createCustomer, getStaff, getCustomer, createProduct, getProduct, makeProductAvailable, updateProduct, prepareOrder, findNewestOrder, addProductOrder, buyOrder } = require('../controllers/situations.controllers')
 
 const situationRouter = require('express').Router()
 
@@ -16,7 +16,8 @@ situationRouter.get('/transactions/find-product', getProduct)
 situationRouter.patch('/transactions/make-product', makeProductAvailable)
 situationRouter.patch('/transactions/update-product', updateProduct)
 situationRouter.post('/transactions/prepare-order', prepareOrder)
-situationRouter.patch('/transactions/update-order', updateProduct)
-situationRouter.patch('/transactions/make-order', updateProduct)
+situationRouter.get('/transactions/newest-order', findNewestOrder)
+situationRouter.post('/transactions/add-product', addProductOrder)
+situationRouter.post('/transactions/buy-order', buyOrder)
 
 module.exports = situationRouter

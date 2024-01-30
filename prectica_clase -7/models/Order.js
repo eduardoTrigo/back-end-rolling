@@ -18,9 +18,14 @@ const orderSchema = new Schema({
         type: [itemsSchema],
     },
     customer:{
-        type: [Schema.Types.ObjectId],
+        type: Schema.Types.ObjectId,
         ref:'User',
         required: true
+    },
+    status:{
+        type:String,
+        enum:["PREPARING","BUYED","DISPATCHED","SHIPPED","FINISHED"],
+        default:"PREPARING"
     }
 })
 

@@ -40,5 +40,21 @@ Content-Type: application/json
 {
     "customerId":"65af61eb2cbe6666d8b9b70d",
     "productId":"65afa0c321ad8e6da7a41f51",
-    "quantity":
+    "quantity":7
+}
+
+
+###get order
+GET http://localhost:3000/situation/transactions/newest-order?customerId=65af61eb2cbe6666d8b9b70d
+
+
+###add order
+POST  http://localhost:3000/situation/transactions/add-product
+
+###buy order
+POST  http://localhost:3000/situation/transactions/buy-order
+Content-Type: application/json
+
+{
+    "customerId":"65af61eb2cbe6666d8b9b70d"
 }

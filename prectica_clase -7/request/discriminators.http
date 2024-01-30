@@ -18,11 +18,11 @@ POST http://localhost:3000/situation/discriminators/create-Customer
 Content-Type: application/json
 
 {
-    "username":"lemmyTrigo"
+    "username":"pituTrigo"
 }
 
 ### get customer
 GET http://localhost:3000/situation/discriminators/find-customer
 
 ### get - find By id - customer
-GET http://localhost:3000/situation/discriminators/find-customer?employeeId=122716r
+GET http://localhost:3000/situation/discriminators/find-customer?username=pituTrigo
