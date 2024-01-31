@@ -1,0 +1,8 @@
+### create player
+POST http://localhost:3000/jugador/create-player
+Content-Type: application/json
+
+{
+    "nombre":"Romario",
+    "valor":250
+}
