@@ -6,3 +6,15 @@ Content-Type: application/json
     "nombre":"Romario",
     "valor":250
 }
+
+### get player
+GET http://localhost:3000/jugador/get-player
+
+### prom - player
+PATCH  http://localhost:3000/jugador/promotion-player
+Content-Type: application/json
+
+{
+    "playerId":"65ba6af79479f08228da2eb1",
+    "estrellas": 3
+}

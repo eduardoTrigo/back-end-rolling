@@ -1,6 +1,6 @@
-const { default: mongoose, Schema } = require("mongoose");
+const { default: mongoose, Schema, model } = require("mongoose");
 
-const itemsSchema = mongoose.Schema({
+const itemsSchema =new mongoose.Schema({
     jugador:{
         type:Schema.Types.ObjectId,
         required:true,
@@ -8,7 +8,7 @@ const itemsSchema = mongoose.Schema({
     }
 })
 
-const tecnicoSchema = mongoose.Schema({
+const tecnicoSchema =new mongoose.Schema({
     nombre:{
         type:String,
         required:true

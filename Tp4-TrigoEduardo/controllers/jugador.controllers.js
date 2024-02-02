@@ -24,7 +24,18 @@ const getPlayer = async(req, res)=>{
     res.json(response)
 }
 
+const playerPromotion = async(req, res) => {
+    const {playerId, estrellas } = req.body
+
+    const player = await Jugador.findByIdAndUpdate(playerId, { estrellas })
+
+    if(!player) return res.status(404).json({ message: " no existe ese jugador"})
+
+    res.status(201).json({message: "jugador recibio una nueva valoracion", data: player})
+}
+
 module.exports = {
     createPlayer,
-    getPlayer
+    getPlayer,
+    playerPromotion
 }

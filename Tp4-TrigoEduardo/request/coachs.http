@@ -1,0 +1,7 @@
+### create coach
+POST http://localhost:3000/tecnico/create-coach
+Content-Type: application/json
+
+{
+    "nombre":"gallardo"
+}
