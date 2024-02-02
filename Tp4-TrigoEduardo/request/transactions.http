@@ -1,0 +1,8 @@
+###
+POST http://localhost:3000/transactions/buy-player
+Content-Type: application/json
+
+{
+    "coachId":"65bbd60c1e74d1e4e858a436",
+    "playerId":"65ba6af79479f08228da2eb1"
+}

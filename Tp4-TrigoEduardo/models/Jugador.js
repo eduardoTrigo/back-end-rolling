@@ -18,7 +18,7 @@ const jugadorSchama = new mongoose.Schema({
     },
     status:{
         type:String,
-        enum:["DISPONIBLE","NO DEISPONIBLE"],
+        enum:["DISPONIBLE","NO DISPONIBLE"],
         default:"DISPONIBLE"
     }
 })

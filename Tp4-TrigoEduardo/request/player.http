@@ -3,8 +3,8 @@ POST http://localhost:3000/jugador/create-player
 Content-Type: application/json
 
 {
-    "nombre":"Romario",
-    "valor":250
+    "nombre":"ronaldo",
+    "valor":300
 }
 
 ### get player
@@ -15,6 +15,6 @@ PATCH  http://localhost:3000/jugador/promotion-player
 Content-Type: application/json
 
 {
-    "playerId":"65ba6af79479f08228da2eb1",
-    "estrellas": 3
+    "playerId":"65bd09228782778af1482439",
+    "estrellas": 2
 }

@@ -3,6 +3,7 @@ const { default: mongoose } = require('mongoose')
 const morgan = require('morgan')
 const jugadorRouter = require('./routes/jugador.router')
 const tecnicoRouter = require('./routes/tecnico.router')
+const transactionRouter = require('./routes/transaction.router')
 
 const app = express()
 
@@ -12,6 +13,7 @@ app.use(morgan('dev'))
 
 app.use('/jugador', jugadorRouter )
 app.use('/tecnico', tecnicoRouter )
+app.use('/transactions', transactionRouter )
 
 
 

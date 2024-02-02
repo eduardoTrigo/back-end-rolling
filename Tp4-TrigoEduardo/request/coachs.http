@@ -3,5 +3,8 @@ POST http://localhost:3000/tecnico/create-coach
 Content-Type: application/json
 
 {
-    "nombre":"gallardo"
+    "nombre":"melliso"
 }
+
+### get player
+GET http://localhost:3000/tecnico/get-coach

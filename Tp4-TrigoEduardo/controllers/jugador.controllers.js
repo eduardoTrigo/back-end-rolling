@@ -31,6 +31,8 @@ const playerPromotion = async(req, res) => {
 
     if(!player) return res.status(404).json({ message: " no existe ese jugador"})
 
+    player.save()
+
     res.status(201).json({message: "jugador recibio una nueva valoracion", data: player})
 }
 
