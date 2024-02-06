@@ -3,12 +3,11 @@ POST http://localhost:3000/jugador/create-player
 Content-Type: application/json
 
 {
-    "nombre":"ronaldo",
-    "valor":300
+    "nombre":"messi"
 }
 
 ### get player
-GET http://localhost:3000/jugador/get-player
+GET http://localhost:3000/jugador/get-player?playerId=65c181c747ba8175b57c53d
 
 ### prom - player
 PATCH  http://localhost:3000/jugador/promotion-player
