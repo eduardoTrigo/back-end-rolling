@@ -15,7 +15,7 @@ const validationPlayerData = [
 ]
 
 const validatePatchPlayer = [
-    body('playerId').optional().isString().withMessage('el nombre debe ser alfabetico'),
+    body('playerId').optional().isMongoId().withMessage('el i debe ser formato mongo'),
     body('valor').optional().isNumeric().withMessage('el valor debe ser numerico'),
     body('estrellas').optional().isNumeric().withMessage('el valor debe ser numerico'),
     requestValidation,

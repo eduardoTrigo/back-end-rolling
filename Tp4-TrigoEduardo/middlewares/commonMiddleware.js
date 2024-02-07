@@ -8,7 +8,7 @@ const requestValidation = (req, res, next) => {
     next()
 }
 
-const errorMiddleware = (err, req, res)=>{
+const errorMiddleware = (err, req, res, next)=>{
     console.log("error capturado", err)
     res.status(500)
     res.json({message: 'internal error'})
