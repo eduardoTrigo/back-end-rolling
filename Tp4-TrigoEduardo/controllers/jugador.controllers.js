@@ -7,7 +7,7 @@ const createPlayer = async (req, res, next) => {
         const player = new Jugador({ nombre, valor, estrellas })
         await player.save()
 
-        res.status(201).json(player)
+        res.status(201).json({data: player, error: []})
 
     } catch (err) {
         next(err)
@@ -29,7 +29,8 @@ const getPlayer = async (req, res, next) => {
         const response = await query.exec()
         if (!response) {
             res.status(404)
-            return res.json({ message: "jugador inexistente" })
+            logger.warn({ message: "jugador inexistente" })
+            return res.json({ data:[], error: "jugador inexistente" })
         }
         res.json(response)
     } catch (err) {
@@ -46,13 +47,13 @@ const playerPromotion = async (req, res, next) => {
 
         if (!player) {
             res.status(400)
-            logger.error({ message: " no existe ese jugador" })
-            return res.json({ message: " no existe ese jugador" })
+            logger.warn({ message: " no existe ese jugador" })
+            return res.json({ data:[], error: " no existe ese jugador" })
         }
 
         // player.save()
 
-        res.status(201).json({ message: "jugador recibio una nueva valoracion", data: player })
+        res.status(201).json({ data: player, message: "jugador recibio una nueva valoracion", data: player })
     } catch (err) {
         next(err)
     }

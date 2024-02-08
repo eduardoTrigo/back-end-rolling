@@ -46,3 +46,45 @@
 {"level":"info","message":"Server listen to port ","service":"user- service"}
 {"level":"info","message":"base de datos conectada","service":"user- service"}
 {"level":"info","message":"Server listen to port ","service":"user- service"}
+{"level":"info","message":"base de datos conectada","service":"user- service"}
+{"level":"info","message":"Server listen to port ","service":"user- service"}
+{"level":"info","message":"base de datos conectada","service":"user- service"}
+{"level":"info","message":"Server listen to port ","service":"user- service"}
+{"level":"info","message":"base de datos conectada","service":"user- service"}
+{"level":"info","message":"Server listen to port ","service":"user- service"}
+{"level":"info","message":"base de datos conectada","service":"user- service"}
+{"level":"info","message":"Server listen to port ","service":"user- service"}
+{"level":"info","message":"base de datos conectada","service":"user- service"}
+{"level":"info","message":"Server listen to port ","service":"user- service"}
+{"level":"info","message":"base de datos conectada","service":"user- service"}
+{"level":"info","message":"Server listen to port ","service":"user- service"}
+{"level":"info","message":"base de datos conectada","service":"user- service"}
+{"level":"info","message":"Server listen to port ","service":"user- service"}
+{"level":"info","message":"base de datos conectada","service":"user- service"}
+{"level":"info","message":"Server listen to port ","service":"user- service"}
+{"level":"info","message":"base de datos conectada","service":"user- service"}
+{"level":"info","message":"Server listen to port ","service":"user- service"}
+{"level":"info","message":"base de datos conectada","service":"user- service"}
+{"level":"info","message":"Server listen to port ","service":"user- service"}
+{"level":"info","message":"base de datos conectada","service":"user- service"}
+{"err":{"code":11000,"index":0,"keyPattern":{"nombre":1},"keyValue":{"nombre":null}},"level":"error","message":"error capturado","service":"user- service"}
+{"level":"info","message":"Server listen to port ","service":"user- service"}
+{"level":"info","message":"base de datos conectada","service":"user- service"}
+{"level":"info","message":"Server listen to port ","service":"user- service"}
+{"level":"info","message":"base de datos conectada","service":"user- service"}
+{"err":{"code":11000,"index":0,"keyPattern":{"nombre":1},"keyValue":{"nombre":null}},"level":"error","message":"error capturado","service":"user- service"}
+{"level":"info","message":"Server listen to port ","service":"user- service"}
+{"level":"info","message":"base de datos conectada","service":"user- service"}
+{"code":11000,"index":0,"keyPattern":{"nombre":1},"keyValue":{"nombre":null},"level":"error","service":"user- service"}
+{"code":11000,"index":0,"keyPattern":{"nombre":1},"keyValue":{"nombre":null},"level":"error","service":"user- service"}
+{"level":"info","message":"Server listen to port ","service":"user- service"}
+{"level":"info","message":"base de datos conectada","service":"user- service"}
+{"level":"info","message":"Server listen to port ","service":"user- service"}
+{"level":"info","message":"base de datos conectada","service":"user- service"}
+{"level":"warn","message":" no existe ese jugador","service":"user- service"}
+{"level":"info","message":"Server listen to port ","service":"user- service"}
+{"level":"info","message":"Server listen to port ","service":"user- service"}
+{"level":"info","message":"base de datos conectada","service":"user- service"}
+{"level":"warn","message":"jugador inexistente","service":"user- service"}
+{"level":"info","message":"Server listen to port ","service":"user- service"}
+{"level":"info","message":"base de datos conectada","service":"user- service"}

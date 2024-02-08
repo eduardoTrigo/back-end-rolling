@@ -3,7 +3,7 @@ POST http://localhost:3000/jugador/create-player
 Content-Type: application/json
 
 {
-    "nombre":"messi"
+    "nombresss":"messi"
 }
 
 ### get player
@@ -11,7 +11,7 @@ GET http://localhost:3000/jugador/get-player
 
 
 ### get player by id
-GET http://localhost:3000/jugador/get-player?playerId=65c181c747ba8175bb57c53d
+GET http://localhost:3000/jugador/get-player?playerId=65ba6af79479f08238da2eb1
 
 
 ### prom - player
@@ -19,6 +19,6 @@ PATCH  http://localhost:3000/jugador/promotion-player
 Content-Type: application/json
 
 {
-    "playerId":"65bd09228782778af148243",
+    "playerId":"65ba6af79479f08238da2eb1",
     "estrellas": 2
 }

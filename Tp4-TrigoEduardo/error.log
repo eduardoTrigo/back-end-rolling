@@ -1,3 +1,10 @@
 {"level":"error","message":"base de datos NO conectada","service":"user- service"}
 {"level":"error","message":"base de datos NO conectada","service":"user- service"}
 {"level":"error","message":" no existe ese jugador","service":"user- service"}
+{"err":{"code":11000,"index":0,"keyPattern":{"nombre":1},"keyValue":{"nombre":null}},"level":"error","message":"error capturado","service":"user- service"}
+{"err":{"code":11000,"index":0,"keyPattern":{"nombre":1},"keyValue":{"nombre":null}},"level":"error","message":"error capturado","service":"user- service"}
+{"code":11000,"index":0,"keyPattern":{"nombre":1},"keyValue":{"nombre":null},"level":"error","service":"user- service"}
+{"code":11000,"index":0,"keyPattern":{"nombre":1},"keyValue":{"nombre":null},"level":"error","service":"user- service"}
+{"level":"error","message":"base de datos NO conectada","service":"user- service"}
+{"level":"error","message":"base de datos NO conectada","service":"user- service"}
+{"level":"error","message":"base de datos NO conectada","service":"user- service"}

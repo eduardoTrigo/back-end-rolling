@@ -1,0 +1,5 @@
+# MONGO VARS
+MONGO_URI=string
+
+# EXPRESS VARS
+PORT=number

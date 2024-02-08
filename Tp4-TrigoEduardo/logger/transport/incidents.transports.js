@@ -1,4 +1,5 @@
 const { Transport } = require('winston')
+const Incident = require('../../models/Incident')
 
 class IncidentTransport extends Transport{
     constructor(opts){
@@ -6,11 +7,16 @@ class IncidentTransport extends Transport{
     }
     log(info, callback){
         if (info.level === 'error') {
-            setImmediate(()=>{
+            setImmediate(async () => {
     
-                console.log(level.info)
-                console.log(level.message)
-    
+                const incident = new Incident({
+                    message: {
+                        date: new Date().toLocaleString(),
+                        error: info.message
+                    }
+                })
+                await incident.save()
+                
                 callback()
             })
         }
