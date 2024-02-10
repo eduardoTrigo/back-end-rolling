@@ -1,4 +1,5 @@
 const Tecnico = require("../models/Tecnico")
+const { makeSuccessResponse, makeErrorResponse } = require("../utils.js/response.utils")
 
 const createCoach = async(req, res) => {
     const { nombre } = req.body
@@ -6,7 +7,7 @@ const createCoach = async(req, res) => {
     const coach = new Tecnico({nombre})
     await coach.save()
 
-    res.json(coach)
+    res.json(makeSuccessResponse(coach))
 }
 
 const getCoach = async(req, res) => {
@@ -20,8 +21,13 @@ const getCoach = async(req, res) => {
     }
 
     const response = await query.exec()
+    if (!response) {
+        res.status(404)
+        logger.warn({ message: "tecnico inexistente" })
+        return res.json(makeErrorResponse("tecnico inexistente"))
+    }
 
-    res.json(response)
+    res.json(makeSuccessResponse(response))
 }
 
 

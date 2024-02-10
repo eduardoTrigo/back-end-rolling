@@ -1,5 +1,6 @@
 const { logger } = require("../logger")
 const Jugador = require("../models/Jugador")
+const { makeSuccessResponse, makeErrorResponse } = require("../utils.js/response.utils")
 
 const createPlayer = async (req, res, next) => {
     try {
@@ -7,7 +8,7 @@ const createPlayer = async (req, res, next) => {
         const player = new Jugador({ nombre, valor, estrellas })
         await player.save()
 
-        res.status(201).json({data: player, error: []})
+        res.status(201).json(makeSuccessResponse(player))
 
     } catch (err) {
         next(err)
@@ -30,9 +31,9 @@ const getPlayer = async (req, res, next) => {
         if (!response) {
             res.status(404)
             logger.warn({ message: "jugador inexistente" })
-            return res.json({ data:[], error: "jugador inexistente" })
+            return res.json(makeErrorResponse("jugador inexistente"))
         }
-        res.json(response)
+        res.json(makeSuccessResponse(response))
     } catch (err) {
         next(err)
     }
@@ -48,12 +49,12 @@ const playerPromotion = async (req, res, next) => {
         if (!player) {
             res.status(400)
             logger.warn({ message: " no existe ese jugador" })
-            return res.json({ data:[], error: " no existe ese jugador" })
+            return res.json(makeErrorResponse("no existe el jugador"))
         }
 
         // player.save()
 
-        res.status(201).json({ data: player, message: "jugador recibio una nueva valoracion", data: player })
+        res.status(201).json(makeSuccessResponse(player))
     } catch (err) {
         next(err)
     }
