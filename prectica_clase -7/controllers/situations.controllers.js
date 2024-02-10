@@ -36,7 +36,7 @@ const getBooks = async (req, res) => {
     }
 
     if (withAutorData === "YES") {
-        query = query.populate('authorId')
+        query = await query.populate('authorId')
     }
 
     const response = await query.exec()

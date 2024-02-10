@@ -2,6 +2,8 @@ const { logger } = require("../logger")
 const Jugador = require("../models/Jugador")
 const { makeSuccessResponse, makeErrorResponse } = require("../utils.js/response.utils")
 
+
+// controlador para alta de jugador
 const createPlayer = async (req, res, next) => {
     try {
         const { nombre, valor, estrellas } = req.body
@@ -15,19 +17,27 @@ const createPlayer = async (req, res, next) => {
     }
 }
 
+// controlador de busqueda de jugador/es
 const getPlayer = async (req, res, next) => {
     try {
-        const { playerId } = req.query
+        const { playerId , disponibilidad} = req.query
 
         let query = undefined
-
+        
         if (playerId !== undefined) {
             query = Jugador.findById(playerId)
         } else {
             query = Jugador.find({})
         }
 
+        //filtro para jugadores disponibles
+        if(disponibilidad === "YES"){
+            query = query.find({ status: "DISPONIBLE" })
+        }
+
         const response = await query.exec()
+
+        //jugador inexistente
         if (!response) {
             res.status(404)
             logger.warn({ message: "jugador inexistente" })
@@ -39,6 +49,7 @@ const getPlayer = async (req, res, next) => {
     }
 }
 
+// controlador para actualizar cantidad de estrellas del jugador
 const playerPromotion = async (req, res, next) => {
     try {
 

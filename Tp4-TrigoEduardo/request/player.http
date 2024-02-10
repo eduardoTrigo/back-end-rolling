@@ -3,15 +3,19 @@ POST http://localhost:3000/jugador/create-player
 Content-Type: application/json
 
 {
-    "nombresss":"messi"
+    "nombre":"almeida"
 }
 
 ### get player
 GET http://localhost:3000/jugador/get-player
 
 
+### get player Disponibles
+GET http://localhost:3000/jugador/get-player?disponibilidad=YES
+
+
 ### get player by id
-GET http://localhost:3000/jugador/get-player?playerId=65ba6af79479f08238da2eb1
+GET http://localhost:3000/jugador/get-player?playerId=65ba6af79479f08228da3eb1
 
 
 ### prom - player

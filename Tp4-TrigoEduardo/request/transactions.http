@@ -3,6 +3,15 @@ POST http://localhost:3000/transactions/buy-player
 Content-Type: application/json
 
 {
-    "coachId":"65bbd60c1e74d1e4e858a436",
+    "coachId":"65bd3f426145b0c34dec7ebe",
     "playerId":"65ba6af79479f08228da2eb1"
+}
+
+###
+POST http://localhost:3000/transactions/match-coach
+Content-Type: application/json
+
+{
+    "coachId_1":"65bbd60c1e74d1e4e858a436",
+    "coachId_2":"65bd3f426145b0c34dec7ebe"
 }

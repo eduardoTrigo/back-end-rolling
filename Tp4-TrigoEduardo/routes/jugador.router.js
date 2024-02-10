@@ -13,6 +13,10 @@ jugadorRouter.get('/get-player',
     getPlayer,
     errorMiddleware
 )
-jugadorRouter.patch('/promotion-player',validatePatchPlayer, playerPromotion, errorMiddleware)
+jugadorRouter.patch('/promotion-player',
+    validatePatchPlayer,
+    playerPromotion,
+    errorMiddleware
+)
 
 module.exports = jugadorRouter
