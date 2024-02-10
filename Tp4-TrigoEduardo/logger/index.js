@@ -1,5 +1,6 @@
 const winston = require('winston')
 const IncidentTransport = require('./transport/incidents.transports')
+const ResultTransport = require('./transport/result.transports')
 
 
 const logger = winston.createLogger({
@@ -15,4 +16,15 @@ const logger = winston.createLogger({
     ]
 })
 
-module.exports = {logger}
+const loggerMatch = winston.createLogger({
+    lever : 'info',
+    format : winston.format.json(),
+    defaultMeta : {service: 'user-service'},
+    transports : [
+        new winston.transports.File({filename: 'resultados-disputa.log',level: 'info'}),
+        new winston.transports.Console(),
+        new ResultTransport({ level: 'info' })
+    ]
+})
+
+module.exports = {logger, loggerMatch}

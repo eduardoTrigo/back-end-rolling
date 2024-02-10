@@ -3,8 +3,8 @@ POST http://localhost:3000/transactions/buy-player
 Content-Type: application/json
 
 {
-    "coachId":"65bd3f426145b0c34dec7ebe",
-    "playerId":"65ba6af79479f08228da2eb1"
+    "coachId":"65bbd60c1e74d1e4e858a436",
+    "playerId":"65c7bc1ea4a0493159181357"
 }
 
 ###

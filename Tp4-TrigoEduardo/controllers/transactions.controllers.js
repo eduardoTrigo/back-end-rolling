@@ -1,4 +1,4 @@
-const { logger } = require("../logger")
+const { logger, loggerMatch } = require("../logger")
 const Jugador = require("../models/Jugador")
 const OrdenCompra = require("../models/ordenCompra")
 const Tecnico = require("../models/Tecnico")
@@ -46,7 +46,8 @@ const buyPlayer = async (req, res, next) => {
 const matchCoach = async (req, res, next) => {
     try {
         const { coachId_1, coachId_2 } = req.body
-    
+        const valorEntrada = 16
+
         if (coachId_1 === coachId_2) {
             res.status(404)
             logger.warn(makeErrorResponse("debe ingresar tecnicos diferentes"))
@@ -67,23 +68,53 @@ const matchCoach = async (req, res, next) => {
             return res.json(makeErrorResponse("deben tener 5 jugadores en sus equipos"))
         }
 
-        const resultado = Math.floor(Math.random() * 5) + 1;
-        
+        const resultado = Math.floor(Math.random() * 5);
+        const expectadores = Math.floor(Math.random() * 300) + 1
+        const recaudacion = expectadores * valorEntrada
+
         switch (resultado) {
-            case 1:
-                
+            case 0:
+                team1.presupuesto += (recaudacion * 0.50)
+                team2.presupuesto += (recaudacion * 0.50)
+                loggerMatch.info({ message: 'empate , recaudacion repartida en partes iguales', expectadores: expectadores, recaudacion: recaudacion })
                 break;
-        
+            case 1:
+                team1.presupuesto += (recaudacion * 0.60)
+                team2.presupuesto += (recaudacion * 0.40)
+                loggerMatch.info({ message: `gana el equipo de ${team1.nombre}`, expectadores: expectadores, recaudacion: recaudacion })
+                break;
+            case 2:
+                team1.presupuesto += (recaudacion * 0.40)
+                team2.presupuesto += (recaudacion * 0.60)
+                loggerMatch.info({ message: `gana el equipo de ${team2.nombre}`, expectadores: expectadores, recaudacion: recaudacion })
+                break;
+            case 3:
+                team1.presupuesto += (recaudacion * 0.70)
+                team2.presupuesto += (recaudacion * 0.30)
+                loggerMatch.info({ message: `gana el equipo de ${team1.nombre} por haTrick`, expectadores: expectadores, recaudacion: recaudacion })
+                break;
+            case 4:
+                team1.presupuesto += (recaudacion * 0.30)
+                team2.presupuesto += (recaudacion * 0.70)
+                loggerMatch.info({ message: `gana el equipo de ${team2.nombre} por haTrick`, expectadores: expectadores, recaudacion: recaudacion })
+                break;
             default:
                 break;
         }
-    
+
+        await team1.save()
+        await team2.save()
+
+        res.json(makeSuccessResponse([team1,team2]))
+
         console.log(team1.jugadores.length)
         console.log(team2.jugadores.length)
+        console.log(expectadores)
+        console.log(recaudacion)
         console.log(resultado)
-        
+
     } catch (err) {
-        
+
     }
 }
 
