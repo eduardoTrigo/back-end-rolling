@@ -114,7 +114,7 @@ const matchCoach = async (req, res, next) => {
         console.log(resultado)
 
     } catch (err) {
-
+        next(err)
     }
 }
 
