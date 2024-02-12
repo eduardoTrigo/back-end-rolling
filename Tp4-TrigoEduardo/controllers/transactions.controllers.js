@@ -76,27 +76,27 @@ const matchCoach = async (req, res, next) => {
             case 0:
                 team1.presupuesto += (recaudacion * 0.50)
                 team2.presupuesto += (recaudacion * 0.50)
-                loggerMatch.info({ message: 'empate , recaudacion repartida en partes iguales', expectadores: expectadores, recaudacion: recaudacion })
+                loggerMatch.info({ message: 'empate , recaudacion repartida en partes iguales',data: [expectadores, recaudacion] })
                 break;
             case 1:
                 team1.presupuesto += (recaudacion * 0.60)
                 team2.presupuesto += (recaudacion * 0.40)
-                loggerMatch.info({ message: `gana el equipo de ${team1.nombre}`, expectadores: expectadores, recaudacion: recaudacion })
+                loggerMatch.info({ message: `gana el equipo de ${team1.nombre}`, data: [expectadores, recaudacion] })
                 break;
             case 2:
                 team1.presupuesto += (recaudacion * 0.40)
                 team2.presupuesto += (recaudacion * 0.60)
-                loggerMatch.info({ message: `gana el equipo de ${team2.nombre}`, expectadores: expectadores, recaudacion: recaudacion })
+                loggerMatch.info({ message: `gana el equipo de ${team2.nombre}`, data: [expectadores, recaudacion] })
                 break;
             case 3:
                 team1.presupuesto += (recaudacion * 0.70)
                 team2.presupuesto += (recaudacion * 0.30)
-                loggerMatch.info({ message: `gana el equipo de ${team1.nombre} por haTrick`, expectadores: expectadores, recaudacion: recaudacion })
+                loggerMatch.info({ message: `gana el equipo de ${team1.nombre} por haTrick`, data: [expectadores, recaudacion] })
                 break;
             case 4:
                 team1.presupuesto += (recaudacion * 0.30)
                 team2.presupuesto += (recaudacion * 0.70)
-                loggerMatch.info({ message: `gana el equipo de ${team2.nombre} por haTrick`, expectadores: expectadores, recaudacion: recaudacion })
+                loggerMatch.info({ message: `gana el equipo de ${team2.nombre} por haTrick`, data: [expectadores, recaudacion] })
                 break;
             default:
                 break;

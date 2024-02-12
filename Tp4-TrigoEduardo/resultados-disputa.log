@@ -4,3 +4,7 @@
 {"expectadores":246,"level":"info","message":"gana el equipo de gallardo","recaudacion":3936,"service":"user-service"}
 {"expectadores":19,"level":"info","message":"empate , recaudacion repartida en partes iguales","recaudacion":304,"service":"user-service"}
 {"expectadores":81,"level":"info","message":"gana el equipo de melliso","recaudacion":1296,"service":"user-service"}
+{"expectadores":11,"level":"info","message":"empate , recaudacion repartida en partes iguales","recaudacion":176,"service":"user-service"}
+{"expectadores":137,"level":"info","message":"gana el equipo de melliso por haTrick","recaudacion":2192,"service":"user-service"}
+{"expectadores":177,"level":"info","message":"gana el equipo de gallardo","recaudacion":2832,"service":"user-service"}
+{"data":[217,3472],"level":"info","message":"gana el equipo de melliso por haTrick","service":"user-service"}

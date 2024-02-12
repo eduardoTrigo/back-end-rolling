@@ -1,5 +1,5 @@
 const { Transport } = require('winston')
-const Incident = require('../../models/Incident')
+const Result = require('../../models/Resultados')
 
 class ResultTransport extends Transport{
     constructor(opts){
@@ -9,7 +9,7 @@ class ResultTransport extends Transport{
         if (info.level === 'info') {
             setImmediate(async () => {
     
-                const result = new Incident({
+                const result = new Result({
                     message: {
                         date: new Date().toLocaleString(),
                         info: info.message
