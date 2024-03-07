@@ -3,7 +3,7 @@ POST http://localhost:3000/jugador/create-player
 Content-Type: application/json
 
 {
-    "nombre":"almeida"
+    "nombre":"enzo"
 }
 
 ### get player

@@ -6,5 +6,8 @@ Content-Type: application/json
     "nombre":"melliso"
 }
 
-### get player
+### get coach
 GET http://localhost:3000/tecnico/get-coach
+
+### get coach
+GET http://localhost:3000/tecnico/get-coach?playerData=YES

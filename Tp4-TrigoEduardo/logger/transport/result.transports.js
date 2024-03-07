@@ -12,7 +12,8 @@ class ResultTransport extends Transport{
                 const result = new Result({
                     message: {
                         date: new Date().toLocaleString(),
-                        info: info.message
+                        info: info.message,
+                        
                     }
                 })
                 await result.save()
