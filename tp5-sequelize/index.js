@@ -1,8 +1,9 @@
 const { SERVER_CONFIG } = require("./config/config");
 const express = require('express')
 const { sequelize } = require("./db/db");
+const app = require("./app");
 
-const app = express()
+// app.use()
 
 sequelize.authenticate()
     .then(async () => {

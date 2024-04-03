@@ -1,0 +1,13 @@
+### post user
+
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "firstname": "lemmy2",
+    "lastname": "trigo",
+    "password": "alexpass",
+    "dni": 56897455,
+    "age": 12,
+    "email": "trigolemmy@gmail.com"
+}

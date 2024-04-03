@@ -1,3 +1,5 @@
+
+
 const TaskModelCreator = (sequelize) => sequelize.define('Task',{
     id:{
         type: DataTypes.INTEGER,
