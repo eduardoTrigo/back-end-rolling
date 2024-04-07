@@ -1,0 +1,9 @@
+### create table
+
+POST http://localhost:3000/tables
+Content-Type: application/json
+
+{
+    "quantity": 4,
+    "place": "patio interno"
+}
